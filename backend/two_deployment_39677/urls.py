@@ -45,10 +45,8 @@ urlpatterns += [
 ]
 
 
-# urlpatterns += [re_path(r"^customer/(?:.*)/?$",
-#                 TemplateView.as_view(template_name='web_build_2/index.html'))]
-# urlpatterns += [path("", TemplateView.as_view(template_name='index.html'))]
-
 urlpatterns += [path("", TemplateView.as_view(template_name='index.html'))]
+urlpatterns += [re_path(r"^customer/(?:.*)/?$",
+                TemplateView.as_view(template_name='web_build_2/index.html'))]
 urlpatterns += [re_path(r"^(?:.*)/?$",
                 TemplateView.as_view(template_name='index.html'))]
