@@ -108,7 +108,7 @@ ROOT_URLCONF = 'two_deployment_39677.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'web_build')],
+        'DIRS': [os.path.join(BASE_DIR, 'web_build'), os.path.join(BASE_DIR, 'web_build_2')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
