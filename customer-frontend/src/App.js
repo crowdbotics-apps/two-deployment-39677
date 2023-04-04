@@ -1,8 +1,7 @@
-import './App.css';
-
-function App() {
+import React from "react";
+const App = () => {
   return (
-    <div className="App">
+    <div>
      Customer Home
     </div>
   );
