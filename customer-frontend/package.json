@@ -1,7 +1,6 @@
 {
   "name": "two-deployment-react",
   "version": "0.1.0",
-  "homepage": "/customer",
   "main": "index.js",
   "private": true,
   "dependencies": {
