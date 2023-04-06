@@ -32,7 +32,7 @@ env = environ.Env()
 env.read_env(env_file)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=False)
+DEBUG = True
 
 try:
     # Pull secrets from Secret Manager
@@ -182,7 +182,13 @@ AUTHENTICATION_BACKENDS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), os.path.join(BASE_DIR, 'web_build')]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'web_build/custom-admin/static'),
+    os.path.join(BASE_DIR, 'web_build/customer/static'),
+    os.path.join(BASE_DIR, 'web_build/custom-admin'),
+    os.path.join(BASE_DIR, 'web_build/customer'),
+    ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/mediafiles/'

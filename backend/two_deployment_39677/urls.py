@@ -20,6 +20,8 @@ from django.views.generic.base import TemplateView
 from allauth.account.views import confirm_email
 from rest_framework import permissions
 from drf_spectacular.views import SpectacularJSONAPIView, SpectacularSwaggerView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     
@@ -44,5 +46,11 @@ urlpatterns += [
     path("api-docs/", SpectacularSwaggerView.as_view(url_name='schema'), name="api_docs")
 ]
 
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# urlpatterns += [re_path(r".*",TemplateView.as_view(template_name='index.html'))]
 
-urlpatterns += [re_path(r".*",TemplateView.as_view(template_name='index.html'))]
+# urlpatterns += [re_path(r"^(?:.*)/?$",
+#                 TemplateView.as_view(template_name='index.html'), name='home_page')]
+
+urlpatterns += [path("testing/react/", TemplateView.as_view(template_name='custom-admin/index.html'), name='home_page')]
+urlpatterns += [path("customer/", TemplateView.as_view(template_name='customer/index.html'), name='home_page')]
